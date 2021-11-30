@@ -23,7 +23,10 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
         this.iniciarFormulario();
     }
-
+/**
+ * c444cd0bdb0c4d353b780107810baf86
+ * ajceron03@misena.edu.co
+ */
     private iniciarFormulario(): void {
         this.formLogin = this.formBuilder.group({
             usuario: ['kiqicafa@ryteto.me', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
