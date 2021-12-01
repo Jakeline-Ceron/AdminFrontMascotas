@@ -5,18 +5,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/components/shared.module';
+import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { HeaderComponent } from './plantilla/header/header.component';
+import { MenuLateralComponent } from './plantilla/menu-lateral/menu-lateral.component';
+
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        InicioComponent,
+        HeaderComponent,
+        MenuLateralComponent,
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
-        SharedModule,
+        FormsModule,
+        ReactiveFormsModule,
         AppRoutingModule
+    ],
+    exports:[
+        FormsModule,
+        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
