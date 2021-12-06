@@ -1,0 +1,70 @@
+<div class="pagetitle">
+    <h1>Solicitudes</h1>
+</div>
+<div class="row">
+    <div class="col">
+
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#Id</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Mascota</th>
+                            <th scope="col">Fecha solicitud</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <ng-container *ngFor="let item of listaSolicitudes">
+                            <tr>
+                                <th scope="row">{{item.id}}</th>
+                                <td>{{item.clienteId}}</td>
+                                <td>{{item.mascotaId}}</td>
+                                <td>{{item.fechaSolicitud}}</td>
+                                <td>{{item.estado}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-sm"
+                                        (click)="agregarAsesor(template, item.id)">+
+                                        Asesor</button>
+
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Agregar asesor a la solicitud: {{solicitudSeleccionada}} </h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-12">
+                <p>Asessor</p>
+                <select class="form-select form-select-sm">
+                    <option selected>Selecciona un asesor</option>
+                    <ng-container *ngFor="let item of listaAsesores">
+                        <option value="{{item.id}}">{{item.nombres}} {{item.apellidos}}
+                        </option>
+                    </ng-container>
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+        <button type="button" class="btn btn-default btn-info" (click)="guardarSolicitudAsesor()">Guardar</button>
+    </div>
+</ng-template>

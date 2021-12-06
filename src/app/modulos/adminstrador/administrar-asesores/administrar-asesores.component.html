@@ -1,0 +1,91 @@
+<main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="assets/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">Mascota Feliz</span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-6">
+
+                <div class="card-body">
+
+                    <div class="pt-4 pb-5">
+                        <h5 class="card-title text-center pb-0 fs-4">Registro de asesor</h5>
+                        <p class="text-center small">Ingresa los datos e información de los asesores</p>
+                    </div>
+
+                    <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100"
+                       [formGroup]="formRegistroA" (ngSubmit)="registrarAsesor(formRegistroA)">
+
+                        <div class="col-12">
+                            <label for="yourName" class="form-label">Nombres</label>
+                            <input type="text" class="form-control"  name="nombres"  id="nombres"
+                            [ngClass]="{'is-invalid':formRegistroA.get('nombres')?.invalid, 'is-valid':formRegistroA.get('nombres')?.valid}"
+                            formControlName="nombres" placeholder="Nombres">
+                            <div class="invalid-feedback"
+                                *ngFor="let error of errorFormService.mapErrors(formRegistroA.get('nombres'), 'Nombres')">
+                                {{error}}
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-12">
+                            <label for="" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" name="apellidos" id="apellidos"
+                                [ngClass]="{'is-invalid':formRegistroA.get('apellidos')?.invalid, 'is-valid':formRegistroA.get('apellidos')?.valid}"
+                                formControlName="apellidos" placeholder="Apellidos">
+                            <div class="invalid-feedback"
+                                *ngFor="let error of errorFormService.mapErrors(formRegistroA.get('apellidos'), 'Apellidos')">
+                                {{error}}
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-12">
+                            <label for="" class="form-label">Documento</label>
+                            <input type="text" class="form-control" name="numeroDocumento" id="numeroDocumento"
+                                [ngClass]="{'is-invalid':formRegistroA.get('documento')?.invalid, 'is-valid':formRegistroA.get('documento')?.valid}"
+                                formControlName="documento" placeholder="Número documento">
+                            <div class="invalid-feedback"
+                                *ngFor="let error of errorFormService.mapErrors(formRegistroA.get('documento'), 'Número documento')">
+                                {{error}}
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-12">
+                            <label for="" class="form-label">Correo electrónico</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                                [ngClass]="{'is-invalid':formRegistroA.get('correo')?.invalid, 'is-valid':formRegistroA.get('correo')?.valid}"
+                                formControlName="correo" placeholder="Correo electrónico">
+                        </div>
+
+                        <div class="mb-3 col-12">
+                            <label for="" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" name="telefono" id="telefono"
+                                [ngClass]="{'is-invalid':formRegistroA.get('telefono')?.invalid, 'is-valid':formRegistroA.get('telefono')?.valid}"
+                                formControlName="telefono" placeholder="Teléfono">
+                        </div>
+
+                        <div class="col-12" style="margin-top: 15px;">
+                        <button class="btn btn-primary w-100" type="submit">Registrar</button>
+                        </div>
+                        
+                    </form>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+</main><!-- End #main -->

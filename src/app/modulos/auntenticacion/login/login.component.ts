@@ -23,10 +23,12 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
         this.iniciarFormulario();
     }
-/**
- * c444cd0bdb0c4d353b780107810baf86
- * ajceron03@misena.edu.co
- */
+    /**
+     * c444cd0bdb0c4d353b780107810baf86
+     * ajceron03@misena.edu.co
+     * 
+     * Asesor: rofaqy@acrossgracealley.com -> b8d434415a94661eb89a9d0aba435382
+     */
     private iniciarFormulario(): void {
         this.formLogin = this.formBuilder.group({
             usuario: ['kiqicafa@ryteto.me', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
         })
     }
 
+    /** Función para autenticarse con el Backend */
     public ingresar({ value, valid }: { value: any, valid: boolean }): void {
         console.log(value, valid)
 

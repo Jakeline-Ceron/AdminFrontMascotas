@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+        <div class="card mb-3">
+            <div class="card-body">
+
+                <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Registra tu mascota</h5>
+                    <p class="text-center small">
+                        Ingresa los datos de su mascota para realizar la solicitud de registro
+                    </p>
+                </div>
+
+                <form class="row g-3 needs-validation" novalidate [formGroup]="formRegistroMascota"
+                    (ngSubmit)="registrarCliente(formRegistroMascota)">
+                    <div class="col-12">
+                        <label for="yourName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" formControlName="nombre"
+                            [ngClass]="{'is-invalid':formRegistroMascota.get('nombre')?.invalid, 'is-valid':formRegistroMascota.get('nombre')?.valid}">
+
+                    </div>
+                    <div class="col-12">
+                        <p> Especie</p>
+                        <input type="radio" class="form-check-input" id="especie1" value="Canino"
+                            formControlName="especie">&nbsp;
+                        <label for="especie1" class="form-label">Canino</label>&nbsp;
+
+                        <input type="radio" class="form-check-input" id="especie2" value="Felino"
+                            formControlName="especie">&nbsp;
+                        <label for="especie2" class="form-label">Felino</label>
+                    </div>
+                    <div class="col-12">
+                        <p>Sexo</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="sexo" id="inlineRadio1"
+                                value="Macho">
+                            <label class="form-check-label" for="inlineRadio1">Macho</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="sexo" id="inlineRadio2"
+                                value="Hembra">
+                            <label class="form-check-label" for="inlineRadio2">Hembra</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Raza</p>
+                        <select style="padding: 10px;" class="form-select form-select-sm" formControlName="raza"
+                            [ngClass]="{'is-invalid':formRegistroMascota.get('raza')?.invalid, 'is-valid':formRegistroMascota.get('raza')?.valid}">
+                            <option selected>Selecciona la raza</option>
+                            <option value="Beagle">Beagle</option>
+                            <option value="Angora">Angora</option>
+                            <option value="Pitbull">Pitbull</option>
+                            <option value="Siames">Siames</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Año de nacimiento</label>
+                        <input type="number" class="form-control" id="edad" formControlName="edad"
+                            [ngClass]="{'is-invalid':formRegistroMascota.get('edad')?.invalid, 'is-valid':formRegistroMascota.get('raza')?.valid}">
+                        <div class="invalid-feedback">Ingresa el año de nacimiento de tu mascota</div>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Peso</label>
+                        <input type="number" class="form-control" id="peso" formControlName="peso"
+                            [ngClass]="{'is-invalid':formRegistroMascota.get('peso')?.invalid, 'is-valid':formRegistroMascota.get('peso')?.valid}">
+                        <div class="invalid-feedback">Ingresa el año de nacimiento de tu mascota</div>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Observaciones</label>
+                        <textarea type="text" class="form-control" id="observaciones" formControlName="observaciones"
+                            [ngClass]="{'is-invalid':formRegistroMascota.get('observaciones')?.invalid, 'is-valid':formRegistroMascota.get('observaciones')?.valid}"></textarea>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Enfermedades</label>
+                        <textarea type="text" class="form-control" id="enfermedades"
+                            [ngClass]="{'is-invalid':formRegistroMascota.get('enfermedades')?.invalid, 'is-valid':formRegistroMascota.get('enfermedades')?.valid}"
+                            formControlName="enfermedades"></textarea>
+                    </div>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

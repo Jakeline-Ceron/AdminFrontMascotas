@@ -26,7 +26,7 @@ export class RegistroComponent implements OnInit {
         this.inicializarFormulario();
     }
 
-    /**Funion que inicializa el formulario */
+    /**Funcion que inicializa el formulario */
     private inicializarFormulario(): void {
         this.formRegistro = this.fb.group({
             nombres: ["", [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z ]*$')]],

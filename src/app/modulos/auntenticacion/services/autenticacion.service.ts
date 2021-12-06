@@ -15,7 +15,8 @@ export class AutenticacionService {
     ) { }
 
     ingresar(datosCredenciales: any) {
-        return this.http.post<UsuarioAutenticado>(`${this.host}/identificarUsuario`, { usuario: datosCredenciales.usuario, clave: datosCredenciales.contrasenia })
+        return this.http.post<UsuarioAutenticado>(`${this.host}/identificarUsuario`,
+            { usuario: datosCredenciales.usuario, clave: datosCredenciales.contrasenia })
             .pipe(
                 tap(resp => {
                     sessionStorage.setItem("token", resp.tk);
@@ -43,7 +44,6 @@ export class AutenticacionService {
     private eliminarSession() {
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("datosUsuario");
-
     }
 
     /**Funcion para cerrar la sesion y salir del sistema */

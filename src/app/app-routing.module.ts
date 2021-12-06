@@ -9,10 +9,13 @@ const routes: Routes = [
         path: 'app',
         component: InicioComponent,
         children: [
-            { path: 'clientes', loadChildren: () => import('./modulos/clientes/clientes.module').then(m => m.ClientesModule) }
+            { path: 'clientes', loadChildren: () => import('./modulos/clientes/clientes.module').then(m => m.ClientesModule) },
+            { path: 'admin', loadChildren: () => import('./modulos/adminstrador/administrador.module').then(m => m.AdministradorModule) },
         ]
 
     },
+
+
 ];
 
 @NgModule({

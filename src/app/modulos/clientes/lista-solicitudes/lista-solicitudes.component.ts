@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosUsuario } from 'src/app/modelos/UsuarioAutenticado';
 import Swal from 'sweetalert2';
+import { AutenticacionService } from '../../auntenticacion/services/autenticacion.service';
 import { SolicitudService } from '../services/solicitud.service';
 
 @Component({
@@ -10,12 +12,15 @@ import { SolicitudService } from '../services/solicitud.service';
 export class ListaSolicitudesComponent implements OnInit {
 
     public listaSolicitudes = []
+    public datosUsuario: DatosUsuario
 
     constructor(
-        private solicitudServicio: SolicitudService
+        private solicitudServicio: SolicitudService,
+        private autenticacionService: AutenticacionService
     ) { }
 
     ngOnInit(): void {
+
         this.cargarSolicitudes();
     }
 
@@ -24,7 +29,7 @@ export class ListaSolicitudesComponent implements OnInit {
     //619e81fcb3921c27c4a0c111
     //619c238ed675343408f4d73f
     private cargarSolicitudes() {
-        this.solicitudServicio.obtenerSolicitudes("619c238ed675343408f4d73f")
+        this.solicitudServicio.obtenerSolicitudes(this.autenticacionService.datosUsuario.id)
             .subscribe(resp => {
                 this.listaSolicitudes = resp
             })
