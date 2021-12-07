@@ -1,0 +1,20 @@
+<ng-container *ngFor="let item of listaMascotas">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title">{{item.nombre}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{item.especie}}</h6>
+
+        <h6 class="card-text">{{item.raza}}</h6>
+        <h6 class="card-text">{{item.sexo}}</h6>
+        <h6 class="card-text">{{2021-item.edad}} años </h6>
+
+        <h6 class="card-text">Plan: {{item.planActivo}}</h6>
+
+
+        <a href="#" class="card-link">Editar</a>
+        <a href="#" class="card-link">Ver plan</a>
+        </div>
+    </div>
+    
+</ng-container>

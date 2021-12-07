@@ -7,6 +7,7 @@ import { ListaSolicitudesComponent } from './lista-solicitudes/lista-solicitudes
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarSolicitudComponent } from './registrar-solicitud/registrar-solicitud.component';
 import { FormularioMascotaComponent } from './formulario-mascota/formulario-mascota.component';
+import { ListaMascotasComponent } from './lista-mascotas/lista-mascotas.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormularioMascotaComponent } from './formulario-mascota/formulario-masc
         AdministrarComponent,
         ListaSolicitudesComponent,
         RegistrarSolicitudComponent,
-        FormularioMascotaComponent
+        FormularioMascotaComponent,
+        ListaMascotasComponent
     ],
     imports: [
         CommonModule,

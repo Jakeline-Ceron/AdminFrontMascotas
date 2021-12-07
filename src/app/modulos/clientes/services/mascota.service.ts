@@ -20,6 +20,9 @@ export class MascotaService {
         return this.http.post(`${this.api}/solicituds`, datosSolicitud);
     }
 
+    public obtenerMascotas(clienteId: string) {
+        return this.http.get<Array<any>>(`${this.api}/clientes/${clienteId}/mascotas`);
+    }
 
 
 }
