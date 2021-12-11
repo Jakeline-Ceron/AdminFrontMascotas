@@ -1,0 +1,71 @@
+
+<div class="container">
+<section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+
+
+    <div class="card mb-6">
+
+        <div class="card-body">
+
+            <div class="pt-4 pb-5">
+                <h5 class="card-title text-center pb-0 fs-4">Registro de productos</h5>
+                <p class="text-center small">Ingresa los datos de cada producto</p>
+            </div>
+
+            <form role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100"
+            [formGroup]="formProducto" (ngSubmit)="registrarProducto(formProducto)">
+
+                <div class="col-12">
+                    <label for="yourName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control"  name="nombre"  id="nombre"
+                    [ngClass]="{'is-invalid':formProducto.get('nombre')?.invalid, 'is-valid':formProducto.get('nombre')?.valid}"
+                    formControlName="nombre" placeholder="Nombre">
+                    <div class="invalid-feedback"
+                        *ngFor="let error of errorFormService.mapErrors(formProducto.get('nombre'), 'Nombre')">
+                        {{error}}
+                    </div>
+                </div>
+
+                <div class="mb-3 col-12">
+                    <label for="" class="form-label">Precio</label>
+                    <input type="text" class="form-control" name="precio" id="precio"
+                        [ngClass]="{'is-invalid':formProducto.get('precio')?.invalid, 'is-valid':formProducto.get('precio')?.valid}"
+                        formControlName="precio" placeholder="precio">
+                    <div class="invalid-feedback"
+                        *ngFor="let error of errorFormService.mapErrors(formProducto.get('precio'), 'precio')">
+                        {{error}}
+                    </div>
+                </div>
+
+                <div class="mb-3 col-12">
+                    <label for="" class="form-label">Cantidad</label>
+                    <input type="text" class="form-control" name="numerocantidad" id="numerocantidad"
+                        [ngClass]="{'is-invalid':formProducto.get('cantidad')?.invalid, 'is-valid':formProducto.get('cantidad')?.valid}"
+                        formControlName="cantidad" placeholder="Número cantidad">
+                    <div class="invalid-feedback"
+                        *ngFor="let error of errorFormService.mapErrors(formProducto.get('cantidad'), 'Número cantidad')">
+                        {{error}}
+                    </div>
+                </div>
+
+
+                <div class="col-12" style="margin-top: 15px;">
+                <button class="btn btn-primary w-100" type="submit">Registrar</button>
+                </div>
+                
+            </form>
+            
+        </div>
+    </div>
+
+
+  
+</div>
+</div>
+</div>
+</section>
+</div>

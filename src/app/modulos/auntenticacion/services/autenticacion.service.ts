@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { DatosUsuario, UsuarioAutenticado } from '../../../modelos/UsuarioAutenticado';
+import { DatosUsuario, recuperacion, UsuarioAutenticado } from '../../../modelos/UsuarioAutenticado';
 
 @Injectable({
     providedIn: 'root'
@@ -50,5 +50,12 @@ export class AutenticacionService {
     public salirSistema() {
         this.eliminarSession();
     }
+
+    // Función que envía una nueva contraseña y la modifica
+    public recuperarClave(usuario:string){
+        return this.http.get(`${this.host}/recuperarClave/${usuario}`)
+    }
+
+
 
 }

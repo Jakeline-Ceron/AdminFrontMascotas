@@ -11,7 +11,6 @@ import { HeaderComponent } from './plantilla/header/header.component';
 import { MenuLateralComponent } from './plantilla/menu-lateral/menu-lateral.component';
 
 
-
 @NgModule({
     declarations: [
         AppComponent,

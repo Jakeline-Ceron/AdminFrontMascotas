@@ -10,3 +10,7 @@ export interface DatosUsuario {
     rol: string,
     estado: string
 }
+
+export interface recuperacion {
+    usuario: string
+}

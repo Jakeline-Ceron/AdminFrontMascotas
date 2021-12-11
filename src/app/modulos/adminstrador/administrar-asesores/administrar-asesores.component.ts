@@ -64,11 +64,6 @@ export class AdministrarAsesoresComponent implements OnInit {
             this.formRegistroA.reset();
         })
 
-
-}
-
-
-
-
-
+  } 
+  
 }
